@@ -60,12 +60,15 @@ function Quica(){
 		this.puntos++
 	}
 	
-	
 	this.colision = function(x,y){
 		var distancia=Math.sqrt( Math.pow( (x-this.x), 2)+Math.pow( (y-this.y),2));
 		if(distancia>this.img[this.sprite].width)
 		   return false;
 		else
 		   return true;	
+	}
+
+	this.obtenerPuntos = function(){
+		return this.puntos;
 	}
 }

@@ -5,6 +5,7 @@ var puntajeFinal;
 var teclaD;
 var mensaje;
 var cont;
+var aux=0;
 
 inicio();
 
@@ -207,9 +208,28 @@ function ponerMenu(context, main){
 			context.fillText("Clic para empezar", 130, 350);
 	}else{
 		context.fillText("Puntaje: "+puntaje, 140, 320);
+		if(aux<1){
+			agregarPuntajeFinal();
+			aux++;
+		}
 		if(cont % 50 < 25)
 			context.fillText("Clic para volver a jugar", 110, 350);
 	}
 }
 
+function agregarPuntajeFinal(){
+	var pEntregar = document.createElement("input");
+	pEntregar.type = "text";
+	pEntregar.name = "PUNTAJE";
+	pEntregar.value = puntaje;
+	pEntregar.readOnly = "readonly";
+	formulario.appendChild(pEntregar);
+
+	var juegoActual = document.createElement("input");
+	juegoActual.type = "text";
+	juegoActual.name = "JUEGO";
+	juegoActual.value = "PACMAN";
+	juegoActual.readOnly = "readonly";
+	formulario.appendChild(juegoActual);
+}
 document.addEventListener("keydown",capturaTeclado);

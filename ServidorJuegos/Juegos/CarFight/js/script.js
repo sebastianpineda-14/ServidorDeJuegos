@@ -100,8 +100,22 @@ function run(){
 		contextoBuffer.fillText("try again", 400, 550);
 		contexto.clearRect(0,0,miCanvas.width,miCanvas.height);
 		contexto.drawImage(buffer, 0, 0);
+		agregarPuntajeFinal();
 	}
-	
 }
 
+function agregarPuntajeFinal(){
+	var pEntregar = document.createElement("input");
+	pEntregar.type = "text";
+	pEntregar.name = "PUNTAJE";
+	pEntregar.value = quica.obtenerPuntos();
+	pEntregar.readOnly = "readonly";
+	formulario.appendChild(pEntregar);
 
+	var juegoActual = document.createElement("input");
+	juegoActual.type = "text";
+	juegoActual.name = "JUEGO";
+	juegoActual.value = "CARROS";
+	juegoActual.readOnly = "readonly";
+	formulario.appendChild(juegoActual);
+}

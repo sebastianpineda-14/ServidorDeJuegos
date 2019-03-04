@@ -232,6 +232,13 @@ function agregarPuntajeFinal(){
 	pEntregar.value = puntajeFinal;
 	pEntregar.readOnly = "readonly";
 	formulario.appendChild(pEntregar);
+
+	var juegoActual = document.createElement("input");
+	juegoActual.type = "text";
+	juegoActual.name = "JUEGO";
+	juegoActual.value = "BUSCAMINAS";
+	juegoActual.readOnly = "readonly";
+	formulario.appendChild(juegoActual);
 }
 
 function bonificarTiempo(){

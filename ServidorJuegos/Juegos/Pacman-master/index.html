@@ -11,12 +11,12 @@
 	<div class="pacman">
 		<canvas id="micanvas"></canvas>
 	</div>
-
-		<div id="pedirDatos" >
-			<p>Ingresa tu nombre!</p>
-			<input type="text" name="Nombre">
-		</div>
-	
+	<div id="pedirDatos" >
+		<form action="http://localhost/ServidorJuegos/insertar.php" method="post" id="formulario">
+			<p>Ingresa tu nombre! <input type="text" name="NOMBRE"> </p>
+			<p><input type="submit" value="Aceptar"></p>
+		</form>
+	</div>
 	<script src="js/jquery/jquery-1.11.0.min.js" language="JavaScript1.2"></script>
 	<script src="js/bloques.js"></script>
 	<script src="js/pacman.js"></script>
