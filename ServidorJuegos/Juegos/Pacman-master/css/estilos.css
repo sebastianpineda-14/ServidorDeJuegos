@@ -1,0 +1,20 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	width: 100%;
+	background: #CCC;
+}
+
+.pacman {
+	margin: 0 auto;
+}
+
+.pacman canvas {
+	border: 1px solid #000;
+}
+#pedirDatos{
+	display:none;
+}

@@ -1,0 +1,81 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+body{
+	padding-top: 30px;
+	text-align: center;
+	height: 100%;
+    background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+h1{
+	font-size: 70px;
+	margin-bottom: 10;
+	font-family: 'Shadows Into Light', cursive;
+	color: #C8E5D1;
+
+}
+
+div.contenedor{
+	width: 1200px;
+	margin: 0 auto;
+
+}
+
+.navegacion{
+	background-color: #51C4DF;
+}
+nav{
+	width: 800px;
+	margin: 0 auto;
+	position: relative;
+}
+nav ul {
+	list-style: none;
+}
+nav > ul > li {/* Para seleccionar primer nivel ul y li */
+	float:left;
+}
+nav ul::after {
+	content: '';
+	display: block;
+	clear: both; 
+}
+nav ul li a{
+	display: inline-block;
+	width: 200px;
+	font-family: 'Shadows Into Light', cursive;
+	font-size: 30px;
+	text-decoration: none;
+	color:#FFFFFF;
+	text-align: center;
+	padding: 20px 20px;
+}
+nav ul li a:hover{
+	background-color:#00b8e4;
+}
+
+/* Segundo nivel de menú 'desplegable' */
+nav ul ul {
+	position: absolute;
+	top: 100%;
+	background-color: rgba(0, 184, 228, 0.7);
+	display:none;
+}
+
+nav ul li:hover > ul {
+	display: block;
+}
+
+nav ul li:hover {
+	background-color:rgba(0, 184, 228, 0.7);
+}

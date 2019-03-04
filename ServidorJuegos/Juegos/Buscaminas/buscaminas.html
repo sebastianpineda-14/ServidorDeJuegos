@@ -1,0 +1,29 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<meta charste="utf-8">	
+		<title>Buscaminas</title>	
+		<link rel="stylesheet" href="./Css/estilos.css" >
+		<link href="https://fonts.googleapis.com/css?family=Felipa" rel="stylesheet"> 
+    	<script src="./Js/script.js"></script>
+
+	</head>
+	
+	<body onload="cargarTablero(1);">
+		<h1>Buscaminas!</h1>
+		<div id="tiempoJuego"></div>
+		<div id="puntuacion" onload="puntuar();"></div>	
+		<div id="puntuacionFinal" onload="puntuarFinal();"></div>
+		<!-- <div id="puntajeEntregar"></div> -->
+		<div id="cantidadMinas"></div>
+		<div id="tablerominas" class="tablero"></div>
+	 
+		<div id="pedirDatos">
+			<form action="http://localhost/web/insertar.php" method="post" id="formulario">
+				<p>Ingresa tu nombre! <input type="text" name="NOMBRE"> </p>
+				<p><input type="submit" value="Aceptar"></p> 
+			</form>
+		</div>
+		<input type="button" onclick="recargar();" value="Recargar">
+	</body>
+</html>
