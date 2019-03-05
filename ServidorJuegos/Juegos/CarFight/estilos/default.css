@@ -1,6 +1,6 @@
 body {
-	background-color:#000000;
-	background:#000000 url('https://i.ytimg.com/vi/U5vaAtHHMMg/maxresdefault.jpg') no-repeat right center;
+	background-color: black;
+	background: black url('https://i.ytimg.com/vi/U5vaAtHHMMg/maxresdefault.jpg') no-repeat right center;
 	text-align: center;
 }
 
@@ -23,6 +23,7 @@ section {
 #pedirDatos{
     display:none;
 }
+
 canvas {
 	background:url('../imagenes/ROAD.png');
 	color:#ffffff;

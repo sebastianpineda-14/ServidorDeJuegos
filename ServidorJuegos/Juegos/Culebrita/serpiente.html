@@ -15,8 +15,19 @@
 </head>
  
 <body>
+
+	
 <div class="game">
+
 	<canvas id="culebrita" width="600" height="450"></canvas>
 </div>
+	<input type="button" id="btn"  value="PLAY">
+	
+	<div id="pedirDatos">
+			<form action="http://localhost/ServidorJuegos/insertar.php" method="post" id="formulario">
+				<div id="puntuacion"></div>
+				<p>Ingresa tu nombre! <input type="text" name="NOMBRE"> </p>
+				<p><input type="submit" value="Aceptar"></p> 
+			</form>
 </body>
 </html>

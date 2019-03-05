@@ -239,6 +239,7 @@ function agregarPuntajeFinal(){
 	juegoActual.value = "BUSCAMINAS";
 	juegoActual.readOnly = "readonly";
 	formulario.appendChild(juegoActual);
+
 }
 
 function bonificarTiempo(){
@@ -307,6 +308,7 @@ function comporbarBombas(){
 function mostrarCantidadMinas(){
 	var texto = document.getElementById("cantidadMinas");
 	texto.innerHTML = "Cantidad De Minas:" + cantidadMinas;
+	
 }
 
 function cargarTablero(nivel) {

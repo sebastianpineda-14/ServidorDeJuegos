@@ -104,6 +104,7 @@ function run(){
 	}
 }
 
+
 function agregarPuntajeFinal(){
 	var pEntregar = document.createElement("input");
 	pEntregar.type = "text";

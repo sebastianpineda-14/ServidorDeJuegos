@@ -1,6 +1,8 @@
+var puntajeFinal = 0;
+var contadorfinal = 0;
+var auxiliar = 1;
 
-
-$(document).ready(function() {
+$(function() {
 		//Desarrollado y Ambientado por Neider Puentes
 		//Año 2019
 	// Creamos un contexto 2d de nuestro canvas
@@ -13,32 +15,32 @@ $(document).ready(function() {
 	var d;
 	var food;
 	var Puntaje;
-	var Nivel = 40; // velocidad de movimiento
+	var Nivel = 100; // velocidad de movimiento
 	var serpiente;
+	var jugar =false;
+
+	console.log("Ha ocurrido document.ready: documento listo");
+
+	$("#btn").click(function() {
+		jugar = true;
+		init();
+	});
 	
-	
-	function init()
-	{
+	function init(){
 		d = "right"; 
 		createserpiente();
 		createFood();
 		Puntaje = 0;
-
-		if(typeof gameLoop != "undefined") {
+		if(typeof gameLoop == "definied") {
 			clearInterval(gameLoop);
 		}
- 
-		gameLoop = setInterval(paint, 500 / Nivel);
+		gameLoop = setInterval(paint, 5000 / Nivel);
 	}
  
-	init();
-
 	// Creamos la culebrita
-	function createserpiente()
-	{
+	function createserpiente(){
 		var length = 5;
 		serpiente = []; 
- 
 		for(var i = length - 1; i >= 0; i--)
 		{
 			serpiente.push({ x: i, y: 0 });
@@ -53,7 +55,7 @@ $(document).ready(function() {
 			y: Math.round(Math.random() * (height - Celda) / Celda), 
 		};
 	}
-
+	
 	//se ponen los cuadros de la culebrita
 	function paint()
 	{
@@ -75,9 +77,11 @@ $(document).ready(function() {
 			ny++;
 		}
 		
-		if (nx == -1 || nx == width / Celda || ny == -1 || ny == height / Celda || checkCollision(nx, ny, serpiente)) {			
-			init();
- 			return;
+		if (nx == -1 || nx == width / Celda || ny == -1 || ny == height / Celda || checkCollision(nx, ny, serpiente)) {
+			jugar=false;
+			puntajeFinal=Puntaje;
+			agregarPuntajeFinal();
+ 			return true;
 		}
 		
 		if(nx == food.x && ny == food.y) {
@@ -102,7 +106,9 @@ $(document).ready(function() {
 		}
 
 		paintCell(food.x, food.y);
-		
+
+		var point = document.getElementById("puntuacion");
+		point.innerHTML = "Puntuacion:" + Puntaje;
 		var PuntajeText = "Puntaje: " + Puntaje; //Aqui se esta enviando la informacion del puntaje que se acumula Para el uso del juego, puede manejar la variable "Puntaje"
 		
 		context.fillText(PuntajeText, 20, height - 20);
@@ -123,9 +129,6 @@ $(document).ready(function() {
 		for(var i = 0; i < array.length; i++)
 		{
 			if(array[i].x == x && array[i].y == y) {
-				alert('y');
-				sleep(2000);
-				sleep(3000);
 				return true;
 			}
 		}
@@ -146,4 +149,30 @@ $(document).ready(function() {
 			d = "down";
 		}
 	});
+	window.addEventListener('keydown', function (e) {
+	var key = e.keyCode;
+	if (key === 80)// p key
+	{
+	    togglePause();
+	}
+	});
 });
+
+function agregarPuntajeFinal(){
+	if(auxiliar != 0){
+		var pEntregar = document.createElement("input");
+		pEntregar.type = "text";
+		pEntregar.name = "PUNTAJE";
+		pEntregar.value = puntajeFinal;
+		pEntregar.readOnly = "readonly";
+		formulario.appendChild(pEntregar);
+
+		var juegoActual = document.createElement("input");
+		juegoActual.type = "text";
+		juegoActual.name = "JUEGO";
+		juegoActual.value = "SNAKE";
+		juegoActual.readOnly = "readonly";
+		formulario.appendChild(juegoActual);
+	}
+	auxiliar = 0;
+}
